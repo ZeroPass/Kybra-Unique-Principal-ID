@@ -2,6 +2,8 @@
 ICP network - Passport attestation of princpipal ID - backend (Kybra)
 
 ## Commands
+
+
  * Start the server
    
 ```sh
@@ -42,6 +44,8 @@ dfx identity new user  # creating new user (use --disable-encryption in Kybra!)
 dfx identity list # list of ussers
 dfx identity use user1 # change active user
 dfx identity get-principal # get principal
+
+source venv/bin/activate # to activate python virtual enviroment
 ```
 
 ## Warning
