@@ -1,0 +1,12 @@
+{
+    "canisters": {
+        "port": {
+            "type": "custom",
+            "build": "python -m kybra --verbose port src/main.py src/main.did",
+            "post_install": ".kybra/port/post_install.sh",
+            "candid": "src/main.did",
+            "wasm": ".kybra/port/port.wasm",
+            "gzip": true
+        }
+    }
+}

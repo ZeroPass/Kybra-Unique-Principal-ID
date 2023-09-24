@@ -1,0 +1,15 @@
+type ActiveAuthnInfo = record { count : nat8; last_authn : text };
+type AuthnInfo = record {
+  aa : opt ActiveAuthnInfo;
+  country : text;
+  expires : text;
+  attestation : nat;
+};
+service : (principal) -> {
+  get_attestation : (principal) -> (opt AuthnInfo);
+  get_owner : () -> (principal) query;
+  get_url : () -> (opt text) query;
+  is_attested : (principal) -> (bool);
+  set_owner : (principal) -> ();
+  set_url : (text) -> ();
+}
