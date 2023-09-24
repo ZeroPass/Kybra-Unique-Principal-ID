@@ -11,19 +11,28 @@ dfx start (--background) (--clean) # clean is to delete all (private) chain
 * Deploy
 
 ```sh
-dfx deploy port (--newtork ic) --verbose --argument '(principal "admin-prinpical-id")' # use --network -ic to deploy on public chain 
+dfx deploy port (--newtork ic) --verbose --argument '(principal "<admin-prinpical-id>")' # use --network -ic to deploy on public chain 
+```
+* Set url
+
+  * must be called before other action
+  * must be IPv6
+  * call it with identity that is defined in deploy action
+
+```s
+dfx canister call <canister> set_url '("<url>")' 
 ```
 
  * Get info if prinpipal is attested:
    
 ```sh
-dfx canister call <<<<>>>>>> is_attested '(principal "<<<<>>>>>>>>"))
+dfx canister call <canister> is_attested '(principal "<principal>"))
 ```
 
  * Get attestation:
    
 ```sh
-dfx canister call <<<<>>>>>> get_attestation '(principal "<<<<>>>>>>>>")
+dfx canister call <canister> get_attestation '(principal "<principal>")
 ```
 
  * Other usefull commands
